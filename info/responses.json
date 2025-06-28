@@ -1,0 +1,33 @@
+{
+  "responses": {
+    "deliverystatusmeals": "Order ID: ORDER-xxxxx\nCustomer: vsanth@gmail.com\nCustomer Address: no xxx,xxx nagar,xxx,chennai,tamilnadu,india\nCustomer LongLat: Latitude: xxx.xxx, Longitude: xx.xxx\nShop Address: no xxx,xxx xxx,xxx,chennai,tamilnadu,india\nShop LongLat: Latitude: xxx.xxx, Longitude: xxx.xxxx\nDelivery Boy LongLat: Latitude: xxxx.xxx, Longitude: xxx.xxx\nDate: 2025-03-27 00:10:00.000000\nStatus: started\nTransaction ID: 55554444455\nDelivery Boy: janet@gmail.com\n1 x Chicken Biryani at $11 each. Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/chicken_biryani.jpg\nTotal cost for this order: $11.\n\n",
+    "confirmPayment": "52 x Chicken Biryani at $11.00 each. Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/chicken_biryani.jpg\nTotal cost is $572.",
+    "showMeals": "Available meals and options:\nMeals and prices:\nChicken Biryani - Total: $11 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/chicken_biryani.jpg\nMutton Biryani - Total: $13.2 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/mutton_biryani.jpg\nVegetable Fried Rice - Total: $8.8 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/veg_fried_rice.jpg\nMushroom Fried Rice - Total: $9.9 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/mushroom_fried_rice.jpg\nEgg Biryani - Total: $9.35 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/egg_biryani.jpg\nChicken Pizza - Total: $14.289 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/pizza.jpg\nPizza - Total: $11.6 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/pizza.jpg\nBurger - Total: $9.92 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/burger.jpg\nCoke - Total: $2.75 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/coke.jpg\nPepsi - Total: $2.75 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/coke.jpg\nVanilla Ice Cream - Total: $5.7 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/sweet.jpg\nChocolate Ice Cream - Total: $5.7 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/sweet.jpg\n\nSide Dishes (optional):\nRaita - $2.00\nPapad - $1.50\nPickle - $0.50\nSalad - $1.00\nCurd - $1.50\n",
+    "showFoods": "Available foods and options:\nFoods and prices:\nChicken Pizza - Total: $14.289 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/pizza.jpg\nPizza - Total: $11.6 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/pizza.jpg\nBurger - Total: $9.92 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/burger.jpg\nCoke - Total: $2.75 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/coke.jpg\nPepsi - Total: $2.75 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/coke.jpg\nVanilla Ice Cream - Total: $5.7 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/sweet.jpg\nChocolate Ice Cream - Total: $5.7 - Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/sweet.jpg\n\nSizes:\nSmall - $8.00\nMedium - $10.00\nLarge - $12.00\n\nToppings:\nOnion - $1.00\nPepperoni - $2.00\nCheese - $1.50\n",
+    "viewSummary": "52 x Chicken Biryani at $11.00 each. Image: https://nextxfreelancedeveloper.com/testsnkrbvkup/images/Meals/chicken_biryani.jpg\nTotal cost is $572."
+  },
+  "Qtable": {
+    "deliverystatusmeals": 1.6596172126731932,
+    "confirmPayment": 1.2064368837711423,
+    "showMeals": 1.106939892123048,
+    "showFoods": 0.9653183615515376,
+    "viewSummary": 0.7251593247439101
+  },
+  "epsilon": 0.99,
+  "iterations": 1,
+  "feedback": {
+    "deliverystatusmeals": "Delivery status fetched successfully.",
+    "confirmPayment": "Payment confirmed successfully.",
+    "showMeals": "Meals options fetched successfully.",
+    "showFoods": "Food options fetched successfully.",
+    "viewSummary": "Summary fetched successfully."
+  },
+  "planned": "deliverystatusmeals",
+  "goals": [
+    "deliverystatusmeals",
+    "confirmPayment",
+    "showMeals",
+    "showFoods",
+    "viewSummary"
+  ]
+}

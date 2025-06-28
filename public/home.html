@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: linear-gradient(135deg, #f6d365, #fda085); /* vibrant warm tones */
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #333;
+      color: white;
+      padding: 20px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      z-index: 1001;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .sidebar.collapsed {
+      transform: translateX(-100%);
+    }
+
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 60px;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .toggle-btn, .close-btn {
+      background: #444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+    }
+
+    .toggle-btn.hidden {
+      display: none !important;
+    }
+
+    .close-btn {
+      display: none;
+    }
+
+    .main-content {
+      margin-left: 250px;
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar.collapsed ~ .main-content {
+      margin-left: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      width: 200px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+
+    .card img {
+      width: 150px;
+      height: 175px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0 0;
+      font-size: 1rem;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .card button {
+      position: absolute;
+      bottom: 16px;
+      padding: 8px 12px;
+      background: #666;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s;
+      pointer-events: none;
+    }
+
+    .card:hover .card-content {
+      transform: translateY(-10px);
+    }
+
+    .card:hover button,
+    .card:focus-within button {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .card button:hover {
+      background: #444;
+    }
+
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card button {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.collapsed {
+        transform: translateX(0);
+      }
+
+      .close-btn {
+        display: block;
+        margin-left: 10px;
+      }
+
+      .main-content {
+        margin-left: 0 !important;
+        padding: 10px;
+        align-items: flex-start;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+
+      .card button {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">☰</button>
+
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <h2>Menu</h2>      
+      <li>MENU ITEM</li>
+      <li>MENU ITEM</li>
+      <li>MENU ITEM</li>
+      <li>MENU ITEM</li>
+    </ul>
+  </div>
+
+  <div class="main-content" id="main-content" onclick="handleMainClick(event)">
+    <div class="grid">
+      <div class="card">
+        <div class="card-content">
+          <img src="./media/placeholder.jpg" alt="Product" />
+          <h3>Client A</h3>
+        </div>
+        <button onclick="location.href='product_info.html'">Show Info</button>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="./media/placeholder.jpg" alt="Product" />
+          <h3>Client B</h3>
+        </div>
+        <button onclick="location.href='product_info.html'">Show Info</button>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="./media/placeholder.jpg" alt="Product" />
+          <h3>Client C</h3>
+        </div>
+        <button onclick="location.href='product_info.html'">Show Info</button>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="./media/placeholder.jpg" alt="Product" />
+          <h3>Client D</h3>
+        </div>
+        <button onclick="location.href='product_info.html'">Show Info</button>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="./media/placeholder.jpg" alt="Product" />
+          <h3>Client E</h3>
+        </div>
+        <button onclick="location.href='product_info.html'">Show Info</button>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="./media/placeholder.jpg" alt="Product" />
+          <h3>Client F</h3>
+        </div>
+        <button onclick="location.href='product_info.html'">Show Info</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const mainContent = document.getElementById('main-content');
+      const toggleBtn = document.getElementById('toggleBtn');
+      sidebar.classList.toggle('collapsed');
+      mainContent.classList.toggle('overlay-active');
+    }
+
+    function handleMainClick(event) {
+      const sidebar = document.getElementById('sidebar');
+      const mainContent = document.getElementById('main-content');
+      const toggleBtn = document.getElementById('toggleBtn');
+      if (!sidebar.classList.contains('collapsed') && window.innerWidth <= 768) {
+        sidebar.classList.add('collapsed');
+        mainContent.classList.remove('overlay-active');
+        toggleBtn.classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
