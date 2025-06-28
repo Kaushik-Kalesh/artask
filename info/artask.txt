@@ -1,6 +1,0 @@
-i want screen with AI character that speaks response of api when i type prompt
-
-first AI character will appear below text box and button on typign prompt and enter button
-
-AI character will speak resposne and response show on right 
-5 promts for delivery status meals ,show meals,view summary,confirm payment,meal optiosn,food options
